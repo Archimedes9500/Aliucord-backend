@@ -51,7 +51,8 @@ If this doesn't solve your problem send crashlogs (check Crashes in Settings, an
 3. **UserPFP** for free animated profile picture visible to other people using it. In order to use it, follow [this guide](<https://pastebin.com/wbHcbRdt>).
 4. **UserBG** for free animated/custom banner visible to other people using it. In order to use it, follow [this guide](<https://pastebin.com/BF8D7dtv>).
 5. **CustomBadges** for profile badges visible to you. In order to use it, check this [list of drawables](<https://gist.github.com/Vendicated/65775d2868eb7a1e05a65c2a8d5784fc>).
-**To install them, just hold this message (NOT THE LINKS) and u will have a option to do so.** [](<https://github.com/X1nto/AliucordPlugins/blob/builds/NitroSpoof.zip?raw=true>) [](<https://github.com/RhythmLunatic/aliucord-plugins/blob/builds/FakeStickers.zip?raw=true>) [](<https://github.com/OmegaSunkey/awesomeplugins/blob/builds/UserBG.zip?raw=true>) [](<https://github.com/wingio/plugins/blob/builds/CustomBadges.zip?raw=true>)`
+**To install them, just hold this message (NOT THE LINKS) and u will have a option to do so.**
+[1](<https://github.com/X1nto/AliucordPlugins/blob/builds/NitroSpoof.zip?raw=true>) [2](<https://github.com/RhythmLunatic/aliucord-plugins/blob/builds/FakeStickers.zip?raw=true>) [3](<https://github.com/OmegaSunkey/awesomeplugins/blob/builds/UserBG.zip?raw=true>) [4](<https://github.com/wingio/plugins/blob/builds/CustomBadges.zip?raw=true>)`
 	Usage            = "Read the plugin's description in <#811275162715553823> or <#845784407846813696>. You can also go to the plugin's repository and look at information in the readme."
 	BetterInternet   = "This happens when you have an old/misbehaving router. Use mobile data (~120mb usage) or maybe a VPN (*or just get better internet*)."
 	PluginDownloader = "PluginDownloader is now a part of Aliucord. (It won't be present in the plugin list). If the option to download plugins is still missing, reinstall Aliucord."
