@@ -57,6 +57,10 @@ If this doesn't solve your problem send crashlogs (check Crashes in Settings, an
 	BetterInternet   = "This happens when you have an old/misbehaving router. Use mobile data (~120mb usage) or maybe a VPN (*or just get better internet*)."
 	PluginDownloader = "PluginDownloader is now a part of Aliucord. (It won't be present in the plugin list). If the option to download plugins is still missing, reinstall Aliucord."
 	WhereAliucord    = "https://github.com/Aliucord/Manager#Installation"
+	Backports        = `Aliucord uses (and always will use) old version of Discord (126.21), which means some things will work differently that in current Discord.
+For a list of new Discord features that have been backported to Aliucord see <#858409546791518237>.
+If you prefer the recent look see this [list of other Discord mods ](<https://github.com/Discord-Client-Encyclopedia-Management/Discord3rdparties>)`
+	SlashCommands    = "Aliucord currently lacks full bot slash command support, but you can install an experimental slash command fix by following the instructions in <#1210929772683599882> pins."
 )
 
 func initAutoReplies() {
@@ -78,24 +82,29 @@ func initAutoReplies() {
 	}
 
 	autoRepliesRegex := map[*regexp.Regexp]string{
-		//r("^(?:i need )?help(?: me)?$"):                                                             ElaborateHelp,
-		r("help <@!?\\d{17,19}>|<@!?\\d{17,19}> help"):                                                MentionHelp,
-		r("animated (profile|avatar|pfp)"):                                                            FreeNitro,
-		r("is there a plugin"):                                                                        FindPlugin,
-		r("^where(?: i)?'?s(?: the )?.+ plugin$"):                                                     FindPlugin,
-		//r("^can (?:someone|anybody|anyone|you) help(?: me)?\\??$"):                                  JustAsk,
-		r("(can.?not|can'?t) (download|find|get) plugin downloader"):                                  PluginDownloader,
-		r("where( i)?'?s( the)? plugin downloader"):                                                   PluginDownloader,
-		r("(?:where|how) (?:to|do i|do you) (?:install|download|get) a? ?plugins?"):                   InstallPlugins,
-		r("how (?:to|do i|do you|i) (?:install|download|apply|get|use) a? ?themes?"):                  InstallThemes,
-		r("how (?:to|do i|do you|can i) (?:create|make|do) (?:a |my )?(?:own |custom )?themes?"):      CreateThemes,
-		r("how (?:to|do i|do you|can i|put) (?:change|upload|add|set) (?:sounds?|custom sounds?)"):    ThemeSounds,
-		// r("how (?:to|do i|do you|can i) get sounds?(?: url| link)?"):                               GetSound,
-		r("(?:does anyone know|is there) an? (?:\\w.+)?theme"):                                        SearchThemes,
-		r("aliucord (?:\\w+ )?(?:is |keeps? )?(?:crash|stop)"): AliuCrash,
-		r("full transparency (?:is?.?not|isn\\'?t|will not|doesn\\'t|does not) work"):                 FullTransparency,
-		r("theme (?:(?:is?.?not|isn\\'?t|will not|doesn\\'?t|does not) work)|(?:(?: is)? broken)"):    ThemerHusk,
-		r("where(?: \\w+)? aliucord"):                                                                 WhereAliucord,
+		//r("^(?:i need )?help(?: me)?$"):                                                                         ElaborateHelp,
+		r("help <@!?\\d{17,19}>|<@!?\\d{17,19}> help"):                                                            MentionHelp,
+		r("animated (profile|avatar|pfp)"):                                                                        FreeNitro,
+		r("is there a plugin"):                                                                                    FindPlugin,
+		r("^where(?: i)?'?s(?: the )?.+ plugin$"):                                                                 FindPlugin,
+		//r("^can (?:someone|anybody|anyone|you) help(?: me)?\\??$"):                                              JustAsk,
+		r("(can.?not|can'?t) (download|find|get) plugin downloader"):                                              PluginDownloader,
+		r("where( i)?'?s( the)? plugin downloader"):                                                               PluginDownloader,
+		r("(?:where|how) (?:to|do i|do you) (?:install|download|get) a? ?plugins?"):                               InstallPlugins,
+		r("how (?:to|do i|do you|i) (?:install|download|apply|get|use) a? ?themes?"):                              InstallThemes,
+		r("how (?:to|do i|do you|can i) (?:create|make|do) (?:a |my )?(?:own |custom )?themes?"):                  CreateThemes,
+		r("how (?:to|do i|do you|can i|put) (?:change|upload|add|set) (?:sounds?|custom sounds?)"):                ThemeSounds,
+		// r("how (?:to|do i|do you|can i) get sounds?(?: url| link)?"):                                           GetSound,
+		r("(?:does anyone know|is there) an? (?:\\w.+)?theme"):                                                    SearchThemes,
+		r("aliucord (?:\\w+ )?(?:is |keeps? )?(?:crash|stop)"):                                                    AliuCrash,
+		r("full transparency (?:is?.?not|isn\\'?t|will not|doesn\\'t|does not) work"):                             FullTransparency,
+		r("theme (?:(?:is?.?not|isn\\'?t|will not|doesn\\'?t|does not) work)|(?:(?: is)? broken)"):                ThemerHusk,
+		r("where(?: \\w+){0,7} aliucord"):                                                                         WhereAliucord,
+		r("why (?:is|are)(?: [\\w,.'-]+){0,5} (?:not like|different from|different than)(?: in)? discord"):        Backports,
+		r("why (?:is|are)(?: [\\w,.'-]+){0,5} (?:broken|not work(?:ing)?|different) in aliucord"):                 Backports,
+		r("why (?:is|are|isn'?t|aren'?t|don'?t|doesn'?t|can(?:no|'?t))(?: [\\w,.'-]+){1,7} in (?:aliu|dis)cord"):  Backports,
+		r("why(?: is| does)? aliucord (?:looking|look|looks)(?: [\\w,.'-]+){0,4} old"):                            Backports,
+		r("(?:slash|bot|app)(?: slash| bot| app) commands (?:don'?t work|not work|broken)"):                       SlashCommands,
 	}
 
 	s.AddHandler(func(msg *gateway.MessageCreateEvent) {
